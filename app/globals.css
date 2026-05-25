@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #f5f5f5;
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Message cycling animation — purely CSS, 5 messages × 2.5s each = 12.5s total */
+@keyframes messageCycle {
+  0%   { opacity: 1; transform: translateY(0); }
+  17%  { opacity: 1; transform: translateY(0); }
+  20%  { opacity: 0; transform: translateY(-12px); }
+  97%  { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 0; transform: translateY(0); }
+}
+
+/* Progress fill */
+@keyframes progressFill {
+  from { width: 0% }
+  to   { width: 95% }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
+
+/* Focus ring offset matches background */
+* {
+  --tw-ring-offset-color: #0a0a0a;
+}
