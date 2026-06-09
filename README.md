@@ -1,30 +1,26 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:1a1b27&height=220&section=header&text=REGRET%20SIMULATOR&fontSize=55&fontColor=e6edf3&fontAlignY=35&desc=3%20Futures%20%E2%80%A2%205%20Years%20%E2%80%A2%20Every%20Decision%20Has%20a%20Shadow&descSize=16&descAlignY=55&descColor=8b949e&animation=fadeIn" width="100%" />
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:1a1b27&height=220&section=header&text=regret-simulator&fontSize=58&fontColor=e6edf3&fontAlignY=35&desc=Simulate%20three%20diverging%20futures.%20Pick%20the%20one%20you%20can%20live%20with.&descSize=15&descAlignY=55&descColor=8b949e&animation=fadeIn" />
 </p>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white&labelColor=0d1117&color=0d1117" />
+  <img src="https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logoColor=white&labelColor=0d1117&color=0d1117" />
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white&labelColor=0d1117&color=0d1117" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white&labelColor=0d1117&color=0d1117" />
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white&labelColor=0d1117&color=0d1117" />
-  <img src="https://img.shields.io/badge/Next.js_14-000000?style=for-the-badge&logo=next.js&logoColor=white&labelColor=0d1117&color=0d1117" />
-  <img src="https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white&labelColor=0d1117&color=0d1117" />
-  <img src="https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white&labelColor=0d1117&color=0d1117" />
-  <img src="https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white&labelColor=0d1117&color=0d1117" />
 </p>
 
 ---
 
 ## 🔮 What is this?
 
-**Regret Simulator** takes a single life decision and unfolds it into **three diverging 5-year timelines** — the best case, the worst case, and the one you didn't see coming.
+**regret-simulator** answers the question most people are too afraid to model: *what happens if I make this decision?*
 
-You type in a crossroads:
+You describe a major life choice. The AI generates **3 diverging 5-year trajectories** — optimistic, realistic, and pessimistic — with enough specificity to feel real and enough uncertainty to stay honest.
 
-> *"Should I drop out and start a company?"*
+It doesn't tell you what to do. It shows you what you're actually choosing between.
 
-The simulator generates three deeply detailed, year-by-year narratives of how that decision could play out — complete with emotional arcs, financial consequences, relationship shifts, and the compound effects of every small choice that follows.
-
-Powered by local LLM inference through **Ollama**, your decisions and fears never touch a cloud.
-
-> *You can't undo a decision. But you can preview the regret.*
+> *Every decision is a bet on a future. This makes the futures visible.*
 
 ---
 
@@ -32,39 +28,28 @@ Powered by local LLM inference through **Ollama**, your decisions and fears neve
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│                  🎯 YOUR DECISION                        │
-│                                                          │
-│     "Should I move to Berlin for that job offer?"       │
-└──────────────────────┬───────────────────────────────────┘
-                       │
-                       ▼
+│                   YOU DESCRIBE A DECISION                │
+│  "Should I quit my job to build my startup full-time?"   │
+│  + Context: salary, runway, team, product stage          │
+└───────────────────────────────┬──────────────────────────┘
+                                │
+                                ▼
 ┌──────────────────────────────────────────────────────────┐
-│               🧠 OLLAMA LLM ENGINE                       │
+│                🧠 OLLAMA INFERENCE ENGINE                │
 │                                                          │
-│  Context analysis ──▶ Decision tree generation           │
-│  Risk factors ──▶ Emotional modeling                     │
-│  Compound effects ──▶ Timeline divergence                │
-└──────────────────────┬───────────────────────────────────┘
-                       │
-          ┌────────────┼────────────┐
-          ▼            ▼            ▼
-┌──────────────┐ ┌──────────────┐ ┌──────────────┐
-│  🟢 PATH A   │ │  🔴 PATH B   │ │  🟡 PATH C   │
-│  Best Case   │ │  Worst Case  │ │  Wild Card   │
-│              │ │              │ │              │
-│  Year 1...   │ │  Year 1...   │ │  Year 1...   │
-│  Year 2...   │ │  Year 2...   │ │  Year 2...   │
-│  Year 3...   │ │  Year 3...   │ │  Year 3...   │
-│  Year 4...   │ │  Year 4...   │ │  Year 4...   │
-│  Year 5...   │ │  Year 5...   │ │  Year 5...   │
-└──────────────┘ └──────────────┘ └──────────────┘
-                       │
-                       ▼
+│  ┌─────────────┐  ┌──────────────┐  ┌────────────────┐  │
+│  │ 🟢 OPTIMISTIC│  │ 🟡 REALISTIC │  │ 🔴 PESSIMISTIC  │  │
+│  │ Year 1: ... │  │ Year 1: ...  │  │ Year 1: ...    │  │
+│  │ Year 3: ... │  │ Year 3: ...  │  │ Year 3: ...    │  │
+│  │ Year 5: ... │  │ Year 5: ...  │  │ Year 5: ...    │  │
+│  └─────────────┘  └──────────────┘  └────────────────┘  │
+└───────────────────────────────┬──────────────────────────┘
+                                │
+                                ▼
 ┌──────────────────────────────────────────────────────────┐
-│                💾 SUPABASE                                │
-│                                                          │
-│  Simulations persisted · Browse past decisions           │
-│  Compare trajectories · Track decision patterns          │
+│                   💾 SUPABASE STORAGE                    │
+│  Simulation saved → shareable link generated             │
+│  Compare across decisions over time                      │
 └──────────────────────────────────────────────────────────┘
 ```
 
@@ -73,13 +58,12 @@ Powered by local LLM inference through **Ollama**, your decisions and fears neve
 ## 🧱 Tech Stack
 
 | Layer | Technology | Purpose |
-|:------|:-----------|:--------|
-| **Frontend** | Next.js 14 (App Router) | Server components + streaming UI |
-| **Styling** | Tailwind CSS | Dark, cinematic timeline interface |
-| **AI** | Ollama | Local LLM for trajectory generation |
-| **Database** | Supabase (PostgreSQL) | Simulation persistence & history |
-| **Language** | TypeScript | End-to-end type safety |
-| **State** | Zustand (store/) | Client-side state management |
+|:---|:---|:---|
+| **Framework** | Next.js 14 (App Router) | Full-stack React application |
+| **AI** | Ollama (local LLM) | Trajectory generation |
+| **Database** | Supabase (PostgreSQL) | Simulation storage & sharing |
+| **Styling** | Tailwind CSS | UI components |
+| **Language** | TypeScript | Type-safe everywhere |
 
 ---
 
@@ -88,86 +72,50 @@ Powered by local LLM inference through **Ollama**, your decisions and fears neve
 ### Prerequisites
 
 ```bash
+# Install Ollama
+curl -fsSL https://ollama.ai/install.sh | sh
+ollama pull llama3.2
+
 node >= 18.0.0
-ollama           # Running locally with a model pulled
-supabase         # Account or local instance
 ```
 
 ### Installation
 
 ```bash
-# Clone the repository
 git clone https://github.com/Ap-0007/regret-simulator.git
 cd regret-simulator
 
-# Install dependencies
 npm install
-
-# Set up environment
 cp .env.example .env.local
-# Add your Supabase URL, anon key, and Ollama endpoint
-
-# Initialize the database
-# Run schema.sql against your Supabase project
-psql $DATABASE_URL < schema.sql
-
-# Start the development server
 npm run dev
-
-# Open in browser
-open http://localhost:3000
+# App at http://localhost:3000
 ```
 
----
-
-## 📁 Project Structure
-
-```
-regret-simulator/
-├── app/                    # Next.js 14 App Router
-│   ├── layout.tsx          # Root layout
-│   ├── page.tsx            # Landing / decision input
-│   └── simulation/        # Trajectory display routes
-├── components/             # React components
-│   ├── timeline/           # Year-by-year timeline cards
-│   └── ui/                 # Shared UI primitives
-├── lib/                    # Utilities & API clients
-│   ├── ollama.ts           # LLM integration
-│   └── supabase.ts         # Database client
-├── store/                  # Zustand state management
-├── types/                  # TypeScript type definitions
-├── schema.sql              # Supabase database schema
-├── next.config.mjs         # Next.js configuration
-├── tailwind.config.ts      # Tailwind configuration
-└── postcss.config.js       # PostCSS configuration
-```
-
----
-
-## 🤝 Contributing
-
-The best contributions come from people who've faced decisions they couldn't undo.
+### Environment Variables
 
 ```bash
-# Fork the repo
-# Create your feature branch
-git checkout -b feat/your-feature
-
-# Commit your changes
-git commit -m "feat: add your feature"
-
-# Push and open a PR
-git push origin feat/your-feature
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+OLLAMA_BASE_URL=http://localhost:11434
+OLLAMA_MODEL=llama3.2
 ```
 
 ---
 
-<p align="center">
-  <img src="https://img.shields.io/badge/license-MIT-e6edf3?style=flat-square&labelColor=0d1117&color=161b22" />
-</p>
+## 🏛️ Philosophy
+
+The pessimistic path is the most important one. If you can accept it, you're ready to decide.
+
+Most people make decisions by imagining the best case and hoping. This forces you to hold all three futures simultaneously — and choose the *distribution* you can live with.
+
+---
+
+## 🔗 Related
+
+- **[parallel-you-engine](https://github.com/Ap-0007/parallel-you-engine)** — build your psychological profile first, then run the simulation
+
+---
 
 <p align="center">
-  <sub>Built by <a href="https://github.com/Ap-0007">vanta.nox</a> · every decision casts three shadows</sub>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:58a6ff,60:1f6feb,100:0d1117&height=120&section=footer&animation=fadeIn" width="100%" />
 </p>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:1a1b27&height=100&section=footer" width="100%" />
